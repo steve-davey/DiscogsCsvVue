@@ -11,6 +11,7 @@
 import FileUpload from './components/FileUpload.vue'
 import ParseCsvToArray from './components/ParseCsvToArray.vue'
 import ProcessReleaseData from './components/ProcessReleaseData.vue'
+// import App from './App.vue'
 
 export default {
   name: 'App',

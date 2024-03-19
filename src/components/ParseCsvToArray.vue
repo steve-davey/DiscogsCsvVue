@@ -1,15 +1,19 @@
 <template>
-    <label :for="uuid">
-        {{ label }}
-        <input :id="uuid" type="file" u/change="ParseCsvToArray" />
-    </label>
+<label>Array:</label>
 </template>
 
 <script lang="ts">
 
+import Papa from 'papaparse';
+
+const moduleInstance: any = Papa;
+
 export default {
     name: 'ParseCsvToArray',
     components: {
+    },
+    methods: {
+        parseCsvToArray
     },
     data() {
         return {
@@ -17,57 +21,24 @@ export default {
         }
     }
 };
-//   import { Vue, Component } from 'vue';
 
-//   @Component
-//   export default class FileToLines extends Vue {
-//     async fileToLines(file: File): Promise<string[]> {
-//       return new Promise((resolve, reject) => {
-//         const reader = new FileReader();
-//         reader.onload = (e) => {
-//           if (e.target) {
-//             const parsedLines = (e.target.result as string).split(/\r|\n|\r\n/);
-//             resolve(parsedLines);
-//           } else {
-//             reject();
-//           }
-//         };
-//         reader.onerror = reject;
-//         reader.readAsText(file);
-//       });
-//     }
-//   }
 
-import { computed, ref } from 'vue';
-
-const props = withDefaults(
-    defineProps<{
-        uuid: string;
-        label: string;
-    }>(),
-    {
-        enabled: true
-    }
-);
-
-const emits = defineEmits<{
-    (event: 'updateFiles', files: File[]): void;
-}>();
-
-function parseCsvFileToArray(event: Event): void {
-    const target: HTMLInputElement = as HTMLInputElement;
-    const targetFiles: FileList | null = target.files;
-    if (targetFiles) {
-        const selectedFiles: File[] = [];
-        for (let i = 0; i < targetFiles.length; i++) {
-            const currentFile = targetFiles[i];
-            selectedFiles.push(currentFile);
+function parseCsvToArray(url: any, callBack: (arg0: any) => void){
+    Papa.parse(url, {
+        complete: function(results: { data: any[]; }) {
+        callBack(results.data[0]);
         }
-        if (file.length > 0) {
-            emits('updateFiles', selectedFiles);
-        }
-    }
+    });
 }
+
+function doStuff(data: any[]){
+    newArray=data;
+    console.log(newArray);
+}
+
+var newArray=[];
+moduleInstance(document.getElementById("file"), doStuff);
+
 </script>
 
 
