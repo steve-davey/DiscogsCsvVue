@@ -5,6 +5,7 @@
 <script lang="ts">
 
 import Papa from 'papaparse';
+import ROW_NAMES from './RowNames.vue'
 
 const moduleInstance: any = Papa;
 
@@ -17,16 +18,15 @@ export default {
     },
     data() {
         return {
-            File
+            rowNames: ROW_NAMES
         }
     }
 };
 
-
-function parseCsvToArray(url: any, callBack: (arg0: any) => void){
+function parseCsvToArray(url: any, file: (arg0: any) => void){
     Papa.parse(url, {
         complete: function(results: { data: any[]; }) {
-        callBack(results.data[0]);
+            file(results.data[0]);
         }
     });
 }
@@ -40,7 +40,6 @@ var newArray=[];
 moduleInstance(document.getElementById("file"), doStuff);
 
 </script>
-
 
 <style>
 </style>

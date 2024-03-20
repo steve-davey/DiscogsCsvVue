@@ -18,7 +18,7 @@ export default {
     },
     methods: {
     chooseFiles() {
-      // document.getElementById("fileUpload").click();
+      document.getElementById("file").click();
     },
   },
   mounted() {
