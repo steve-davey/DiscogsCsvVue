@@ -18,8 +18,8 @@
   
 <script lang="ts">
 
-import ProcessReleaseData from './components/ProcessReleaseData.vue'
-import db from './components/DiscogsCSV.vue
+import ProcessReleaseData from './ProcessReleaseData.vue'
+import db from './DiscogsCSV.vue'
 
 async function fetchRelease(releaseId: string): Promise<any[] | { error: string }> {
     try {
