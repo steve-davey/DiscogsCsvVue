@@ -1,43 +1,46 @@
 <template>
-<label>Array:</label>
+  <div>
+    <label>Array:</label>
+      <p v-for="row of parsedData">
+        {{ row }}
+      </p>
+  </div>
 </template>
 
 <script lang="ts">
 
+import { defineComponent } from 'vue'
 import Papa from 'papaparse';
 import ROW_NAMES from './RowNames.vue'
 
-const moduleInstance: any = Papa;
-
-export default {
-    name: 'ParseCsvToArray',
-    components: {
-    },
-    methods: {
-        parseCsvToArray
-    },
-    data() {
-        return {
-            rowNames: ROW_NAMES
-        }
+export default defineComponent({
+  name: 'ParseCsvToArray',
+  props: {
+    file: File
+  },
+  data() {
+    return {
+      parsedData: [] as any[],
+      rowNames: ROW_NAMES
     }
-};
-
-function parseCsvToArray(url: any, file: (arg0: any) => void){
-    Papa.parse(url, {
-        complete: function(results: { data: any[]; }) {
-            file(results.data[0]);
+  },
+  methods: {
+    parseCsvToArray(file: File){
+      Papa.parse(file, {
+        header: true,
+        complete: (results: Papa.ParseResult<any>) => {
+          console.log('Parsed: ', results.data);
+          this.parsedData = results.data;
         }
-    });
-}
-
-function doStuff(data: any[]){
-    newArray=data;
-    console.log(newArray);
-}
-
-var newArray=[];
-moduleInstance(document.getElementById("file"), doStuff);
+      });
+    }
+  },
+  mounted() {
+    if(this.file){
+      this.parseCsvToArray(this.file);
+    }
+  },
+});
 
 </script>
 
