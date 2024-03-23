@@ -1,6 +1,5 @@
 <template>
   <div>
-    <label>Array:</label>
     <p v-for="row of parsedData">
       {{ row }}
     </p>

@@ -1,5 +1,5 @@
 <template>
-  <label>Release data:</label>
+  <label>Process release data</label>
 </template>
 
 <script lang="ts">
