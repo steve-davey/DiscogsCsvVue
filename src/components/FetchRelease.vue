@@ -3,9 +3,10 @@
 </template>
 
 <script lang="ts">
-
+import { DiscogsClient } from '@lionralfs/discogs-client';
 import ProcessReleaseData from './ProcessReleaseData.vue'
-import db from './DiscogsCSV.vue'
+
+const db = new DiscogsClient().database();
 
 async function fetchRelease(releaseId: string): Promise<any[] | { error: string }> {
   try {
