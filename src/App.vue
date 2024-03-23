@@ -1,8 +1,9 @@
 <template>
   <div>
-    <FileUpload @file="setFile"/>
-    <ParseCsvToArray v-if="file" :file="file"/>
-<!--    <ProcessReleaseData /> -->
+    <FileUpload @file="setFile" />
+    <ParseCsvToArray v-if="file" :file="file" />
+    <ProcessReleaseData />
+    <FetchRelease />
   </div>
 </template>
 
@@ -11,13 +12,15 @@ import { defineComponent } from 'vue';
 import FileUpload from './components/FileUpload.vue'
 import ParseCsvToArray from './components/ParseCsvToArray.vue'
 import ProcessReleaseData from './components/ProcessReleaseData.vue'
+import FetchRelease from './components/FetchRelease.vue'
 
 export default defineComponent({
-  name: 'App', 
+  name: 'App',
   components: {
     FileUpload,
     ParseCsvToArray,
     ProcessReleaseData,
+    FetchRelease
   },
   data() {
     return {
@@ -25,7 +28,7 @@ export default defineComponent({
     }
   },
   methods: {
-    setFile(file: File){
+    setFile(file: File) {
       console.log("Received file:", file)
       this.file = file;
     }
@@ -36,5 +39,4 @@ export default defineComponent({
 });
 </script>
 
-<style>
-</style>
+<style></style>

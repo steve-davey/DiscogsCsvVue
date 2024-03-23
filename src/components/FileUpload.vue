@@ -1,7 +1,7 @@
 <template>
-    <label>File:</label>
-    <input type="file" @change="chooseFiles">
-    
+  <label>File:</label>
+  <input type="file" @change="chooseFiles">
+
 </template>
 
 <script lang="ts">
@@ -30,5 +30,4 @@ export default defineComponent({
 
 </script>
 
-<style>
-</style>
+<style></style>

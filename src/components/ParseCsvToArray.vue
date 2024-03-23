@@ -1,9 +1,9 @@
 <template>
   <div>
     <label>Array:</label>
-      <p v-for="row of parsedData">
-        {{ row }}
-      </p>
+    <p v-for="row of parsedData">
+      {{ row }}
+    </p>
   </div>
 </template>
 
@@ -25,7 +25,7 @@ export default defineComponent({
     }
   },
   methods: {
-    parseCsvToArray(file: File){
+    parseCsvToArray(file: File) {
       Papa.parse(file, {
         header: false,
         complete: (results: Papa.ParseResult<any>) => {
@@ -36,7 +36,7 @@ export default defineComponent({
     }
   },
   mounted() {
-    if(this.file){
+    if (this.file) {
       this.parseCsvToArray(this.file);
     }
   },
@@ -44,5 +44,4 @@ export default defineComponent({
 
 </script>
 
-<style>
-</style>
+<style></style>
