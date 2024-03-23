@@ -27,7 +27,7 @@ export default defineComponent({
   methods: {
     parseCsvToArray(file: File){
       Papa.parse(file, {
-        header: true,
+        header: false,
         complete: (results: Papa.ParseResult<any>) => {
           console.log('Parsed: ', results.data);
           this.parsedData = results.data;

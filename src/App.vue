@@ -13,7 +13,7 @@ import ParseCsvToArray from './components/ParseCsvToArray.vue'
 import ProcessReleaseData from './components/ProcessReleaseData.vue'
 
 export default defineComponent({
-  name: 'App',
+  name: 'App', 
   components: {
     FileUpload,
     ParseCsvToArray,
