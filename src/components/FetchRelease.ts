@@ -1,12 +1,12 @@
 import { DiscogsClient } from '@lionralfs/discogs-client';
 import { processReleaseData } from './ProcessReleaseData';
 
-export default  ({
+export default  {
   name: 'FetchRelease',
   methods: {
     fetchRelease
   }
-});
+}
 
 const db = new DiscogsClient().database();
 

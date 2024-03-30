@@ -1,4 +1,11 @@
-import { ROW_NAMES } from './RowNames'
+import { ROW_NAMES } from './RowNames';
+
+export default  {
+  name: 'DownloadCSV',
+  methods: {
+    downloadCSV
+  }
+}
 
 export function downloadCSV(data: any[]) {
     const csvContent = "data:text/csv;charset=utf-8," + ROW_NAMES.join(",") + "\n" + data.map(e => e.join(",")).join("\n");

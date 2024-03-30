@@ -1,14 +1,4 @@
-<template>
-
-  <input type="file" @change="chooseFiles">
-
-</template>
-
-<script lang="ts">
-
-import { defineComponent } from 'vue'
-
-export default defineComponent({
+export default {
   name: 'FileUpload',
   data() {
     return {
@@ -26,8 +16,4 @@ export default defineComponent({
   mounted() {
     console.log("mounted");
   },
-});
-
-</script>
-
-<style></style>
+}

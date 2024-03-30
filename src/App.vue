@@ -4,15 +4,17 @@
     <ParseCsvToArray v-if="file" :file="file" />
     <ProcessReleaseData />
     <FetchRelease />
+    <DownloadCSV />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import FileUpload from './components/FileUpload.vue'
-import ParseCsvToArray from './components/ParseCsvToArray.vue'
-import ProcessReleaseData from './components/ProcessReleaseData.vue'
-import FetchRelease from './components/FetchRelease.vue'
+import FileUpload from './components/FileUpload';
+import ParseCsvToArray from './components/ParseCsvToArray';
+import ProcessReleaseData from './components/ProcessReleaseData';
+import FetchRelease from './components/FetchRelease';
+import DownloadCSV from './components/DownloadCSV'
 
 export default defineComponent({
   name: 'App',
@@ -20,7 +22,8 @@ export default defineComponent({
     FileUpload,
     ParseCsvToArray,
     ProcessReleaseData,
-    FetchRelease
+    FetchRelease,
+    DownloadCSV
   },
   data() {
     return {
