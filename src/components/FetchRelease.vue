@@ -6,6 +6,7 @@
 import { DiscogsClient } from '@lionralfs/discogs-client';
 import ProcessReleaseData from './ProcessReleaseData.vue'
 import { defineComponent } from 'vue'
+// import { defineAsyncComponent } from 'vue'
 
 export default defineComponent ({
   name: 'FetchRelease',
@@ -15,6 +16,13 @@ export default defineComponent ({
 });
 
 const db = new DiscogsClient().database();
+
+// const AsyncComp = defineAsyncComponent(() => {
+//   return new Promise((resolve, reject) => {
+//     // ...load component from server
+//     resolve(/* loaded component */)
+//   })
+// })
 
 async function fetchRelease(releaseId: string): Promise<any[] | { error: string }> {
   try {

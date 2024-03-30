@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p v-for="row of parsedData">
+    <p v-for="row of parsedData" v-bind:key="row.id">
       {{ row }}
     </p>
   </div>
