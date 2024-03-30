@@ -4,7 +4,7 @@
 
 <script lang="ts">
 
-import ROW_NAMES from './RowNames.vue'
+import { ROW_NAMES } from './RowNames'
 // import formattedData from './ProcessReleaseData.vue'
 
 function downloadCSV(data: any[]) {

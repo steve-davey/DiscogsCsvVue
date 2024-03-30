@@ -10,7 +10,6 @@
 
 import { defineComponent } from 'vue'
 import Papa from 'papaparse';
-import ROW_NAMES from './RowNames.vue'
 
 export default defineComponent({
   name: 'ParseCsvToArray',
@@ -19,8 +18,7 @@ export default defineComponent({
   },
   data() {
     return {
-      parsedData: [] as any[],
-      rowNames: ROW_NAMES
+      parsedData: [] as any[]
     }
   },
   methods: {

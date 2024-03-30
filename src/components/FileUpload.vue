@@ -1,5 +1,5 @@
 <template>
-  <label>File upload</label>
+
   <input type="file" @change="chooseFiles">
 
 </template>

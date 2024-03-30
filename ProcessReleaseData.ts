@@ -1,22 +1,4 @@
-<template>
-  <label>Process release data</label>
-</template>
-
-<script lang="ts">
-
 import { type GetReleaseResponse } from '@lionralfs/discogs-client/types/types';
-
-export default {
-  name: 'ProcessReleaseData',
-  methods: {
-    processReleaseData
-  },
-  data() {
-    return {
-      // formattedData
-    }
-  },
-};
 
 export function processReleaseData(releaseId: string, data: GetReleaseResponse) {
 
@@ -59,7 +41,3 @@ export function processReleaseData(releaseId: string, data: GetReleaseResponse) 
 
   return formattedData;
 }
-
-</script>
-
-<style></style>
