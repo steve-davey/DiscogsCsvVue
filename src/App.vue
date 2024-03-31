@@ -9,12 +9,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import FileUpload from './components/FileUpload';
-import ParseCsvToArray from './components/ParseCsvToArray';
-import ProcessReleaseData from './components/ProcessReleaseData';
+import DownloadCSV from './components/DownloadCSV';
 import FetchRelease from './components/FetchRelease';
-import DownloadCSV from './components/DownloadCSV'
+import { defineComponent } from 'vue';
+import FileUpload from './components/FileUpload.vue';
+import ParseCsvToArray from './components/ParseCsvToArray.vue';
+import ProcessReleaseData from './components/ProcessReleaseData';
 
 export default defineComponent({
   name: 'App',

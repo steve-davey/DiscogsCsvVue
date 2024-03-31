@@ -1,6 +1,17 @@
+<template>
+  <div>
+    <p v-for="row of parsedData" v-bind:key="row.id">
+      {{ row }}
+    </p>
+  </div>
+</template>
+
+<script lang="ts">
+
+import { defineComponent } from 'vue'
 import Papa from 'papaparse';
 
-export default {
+export default defineComponent({
   name: 'ParseCsvToArray',
   props: {
     file: File
@@ -26,4 +37,8 @@ export default {
       this.parseCsvToArray(this.file);
     }
   },
-}
+});
+
+</script>
+
+<style></style>
