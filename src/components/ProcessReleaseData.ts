@@ -1,4 +1,4 @@
-import { type GetReleaseResponse } from '@lionralfs/discogs-client/types/types';
+import { type GetReleaseResponse } from '@lionralfs/discogs-client/lib/types';
 
 export default  {
   name: 'ProcessReleaseData',
