@@ -16,7 +16,7 @@ export default defineComponent({
     }
   },
   methods: {
-    chooseFiles(event) {
+    chooseFiles(event: any) {
       const file = event.target.files[0];
       this.$emit("file", file);
     },

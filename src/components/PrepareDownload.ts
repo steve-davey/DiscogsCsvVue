@@ -16,4 +16,3 @@ export function prepareDownload(releases: any[]) {
     document.body.appendChild(link); // Required for Firefox
     link.click();
   }
-
