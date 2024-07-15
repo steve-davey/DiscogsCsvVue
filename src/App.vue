@@ -41,7 +41,7 @@ export default defineComponent({
             }
         },
         async downloadCSV(releases: any[]) {
-            download = await prepareDownload(releases)
+            this.data = await prepareDownload(releases)
         }
     },
     watch: {
