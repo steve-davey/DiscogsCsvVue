@@ -8,18 +8,24 @@
             {{ row }}
         </p>
     </div>
+
+    <div>
+    <PrepareDownload />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import FileUpload from '@/components/FileUpload.vue';
 import { fetchRelease, parseCsvToArray } from "@/parser";
-// import { downloadCSV } from '@/components/DownloadCSV.vue';
+import PrepareDownload from './components/PrepareDownload';
 import { ROW_NAMES } from '@/components/RowNames';
+
 export default defineComponent({
     name: 'App',
     components: {
         FileUpload,
+        PrepareDownload
     },
     data() {
         return {

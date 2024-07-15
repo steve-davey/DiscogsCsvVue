@@ -1,13 +1,13 @@
 import { ROW_NAMES } from './RowNames';
 
 export default  {
-  name: 'DownloadCSV',
+  name: 'PrepareDownload',
   methods: {
-    downloadCSV
+    prepareDownload
   }
 }
 
-export function downloadCSV(data: any[]) {
+export function prepareDownload(data: any[]) {
     const csvContent = "data:text/csv;charset=utf-8," + ROW_NAMES.join(",") + "\n" + data.map(e => e.join(",")).join("\n");
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
