@@ -13,15 +13,14 @@ export function processReleaseData(releaseId: string, data: GetReleaseResponse) 
   const artists = data.artists?.map?.(artist => artist.name);
   const barcode = data.identifiers.filter(id => id.type === 'Barcode').map(barcode => barcode.value);
   const catno = data.labels.map(catno => catno.catno);
-  const uniqueCatno = [...new Set(catno)];
+  const delimiter = '|';
   const descriptions = data.formats.map(descriptions => descriptions.descriptions);
   const format = data.formats.map(format => format.name);
   const labels = data.labels.map(label => label.name);
-  const uniqueLabels = [...new Set(labels)];
   const qty = data.formats.map(format => format.qty);
   const tracklist = data.tracklist.map(track => track.title);
-  // const delimiter = document.getElementById('delimiter').value || '|';
-  const delimiter = '|';
+  const uniqueCatno = [...new Set(catno)];
+  const uniqueLabels = [...new Set(labels)];
   const formattedBarcode = barcode.join(delimiter);
   const formattedCatNo = uniqueCatno.join(delimiter);
   const formattedGenres = genres.join(delimiter);
